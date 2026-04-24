@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construtora Torres – Pedreiro | Encanador | Azulejista | Eletricista | Pintor</title>
+  <meta name="description" content="Construtora Torres oferece serviços de pedreiro, encanador, azulejista, eletricista e pintor com qualidade e responsabilidade. Profissionais qualificados para sua obra." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E85D04;
+      --orange-dark: #C04D00;
+      --orange-light: #FF7A1A;
+      --dark: #1A1A2E;
+      --dark2: #16213E;
+      --gray: #2D2D2D;
+      --gray-light: #F5F5F5;
+      --white: #FFFFFF;
+      --text: #444444;
+      --text-light: #777777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(26, 26, 46, 0.97);
+      backdrop-filter: blur(10px);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      transition: all .3s;
+    }
+
+    nav.scrolled {
+      height: 60px;
+      background: rgba(26, 26, 46, 0.99);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--orange);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo-text span:first-child {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .65rem;
+      font-weight: 600;
+      color: #aaa;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-logo-text span:last-child {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .nav-logo-text span:last-child em {
+      color: var(--orange);
+      font-style: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      transition: color .3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 2px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: white !important;
+      padding: .5rem 1.2rem;
+      border-radius: 6px;
+      transition: background .3s !important;
+    }
+
+    .nav-cta:hover { background: var(--orange-dark) !important; }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0d0d1a 0%, #1A1A2E 50%, #0d1117 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 2rem 4rem;
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(232,93,4,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(232,93,4,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(232,93,4,0.06) 0%, transparent 40%);
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232,93,4,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,93,4,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(232,93,4,0.15);
+      border: 1px solid rgba(232,93,4,0.3);
+      color: var(--orange-light);
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title .highlight {
+      color: var(--orange);
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #aaa;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .hero-services-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ccc;
+      padding: .35rem .9rem;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      transition: all .3s;
+    }
+
+    .pill:hover {
+      background: rgba(232,93,4,0.2);
+      border-color: var(--orange);
+      color: var(--orange-light);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--orange);
+      color: white;
+      padding: .9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .5px;
+      transition: all .3s;
+      box-shadow: 0 4px 20px rgba(232,93,4,0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(232,93,4,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: transparent;
+      color: white;
+      padding: .9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .5px;
+      border: 2px solid rgba(255,255,255,0.25);
+      transition: all .3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange-light);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo-container {
+      position: relative;
+      width: 380px;
+      height: 380px;
+    }
+
+    .hero-logo-ring {
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      border: 2px solid rgba(232,93,4,0.2);
+      animation: rotate 20s linear infinite;
+    }
+
+    .hero-logo-ring::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-logo-ring-2 {
+      position: absolute;
+      inset: -45px;
+      border-radius: 50%;
+      border: 1px dashed rgba(232,93,4,0.1);
+      animation: rotate 30s linear infinite reverse;
+    }
+
+    .hero-logo-bg {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,93,4,0.08) 0%, rgba(26,26,46,0.5) 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(232,93,4,0.15);
+    }
+
+    .hero-logo-img {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 30px rgba(232,93,4,0.3));
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--orange);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: .75rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    @keyframes rotate { to { transform: rotate(360deg); } }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: #666;
+      font-size: .7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .scroll-indicator i { font-size: 1.2rem; color: var(--orange); }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 6rem 2rem; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(232,93,4,0.1);
+      color: var(--orange);
+      padding: .3rem .9rem;
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(232,93,4,0.2);
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: .8rem;
+    }
+
+    .section-title span { color: var(--orange); }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-light);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ── SERVICES ── */
+    #servicos {
+      background: var(--gray-light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    .service-card-header {
+      padding: 2rem 2rem 1rem;
+      position: relative;
+    }
+
+    .service-icon-wrap {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      transition: transform .3s;
+    }
+
+    .service-card:hover .service-icon-wrap {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .service-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: .5rem;
+    }
+
+    .service-card-desc {
+      font-size: .9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .service-card-body {
+      padding: 0 2rem 1.5rem;
+    }
+
+    .service-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .85rem;
+      color: var(--text);
+      padding: .35rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .service-list li:last-child { border-bottom: none; }
+
+    .service-list li i {
+      color: var(--orange);
+      font-size: .7rem;
+      flex-shrink: 0;
+    }
+
+    .service-card-footer {
+      padding: 1.2rem 2rem;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--orange);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .82rem;
+      text-decoration: none;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      transition: gap .3s;
+    }
+
+    .service-link:hover { gap: .8rem; }
+
+    .service-card-accent {
+      position: absolute;
+      top: 0; right: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 0 16px 0 80px;
+      opacity: .08;
+    }
+
+    /* Service color themes */
+    .card-construcao .service-icon-wrap { background: rgba(232,93,4,0.1); color: var(--orange); }
+    .card-construcao .service-card-accent { background: var(--orange); }
+    .card-pedreiro .service-icon-wrap { background: rgba(139,69,19,0.1); color: #8B4513; }
+    .card-pedreiro .service-card-accent { background: #8B4513; }
+    .card-encanador .service-icon-wrap { background: rgba(0,119,182,0.1); color: #0077B6; }
+    .card-encanador .service-card-accent { background: #0077B6; }
+    .card-azulejista .service-icon-wrap { background: rgba(22,86,190,0.1); color: #1656BE; }
+    .card-azulejista .service-card-accent { background: #1656BE; }
+    .card-eletricista .service-icon-wrap { background: rgba(255,190,0,0.15); color: #F4A800; }
+    .card-eletricista .service-card-accent { background: #F4A800; }
+    .card-pintor .service-icon-wrap { background: rgba(76,175,80,0.1); color: #4CAF50; }
+    .card-pintor .service-card-accent { background: #4CAF50; }
+
+    /* ── ABOUT ── */
+    #sobre {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .about-card-float {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--orange);
+      color: white;
+      padding: 1.2rem 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(232,93,4,0.4);
+      text-align: center;
+    }
+
+    .about-card-float strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .about-card-float span {
+      font-size: .8rem;
+      opacity: .9;
+      font-weight: 600;
+    }
+
+    .about-badge-top {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      background: var(--dark);
+      color: white;
+      padding: .8rem 1.2rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .8rem;
+      font-weight: 600;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .about-badge-top i { color: var(--orange); }
+
+    .about-text .section-header {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text .section-title { margin-bottom: 1rem; }
+
+    .about-text p {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: .95rem;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+    }
+
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(232,93,4,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .value-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--dark);
+      margin-bottom: .2rem;
+    }
+
+    .value-text span {
+      font-size: .8rem;
+      color: var(--text-light);
+    }
+
+    /* ── WHY US ── */
+    #diferenciais {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #diferenciais::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(232,93,4,0.15) 0%, transparent 70%);
+    }
+
+    #diferenciais .section-title { color: white; }
+    #diferenciais .section-desc { color: #aaa; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    .feature-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(232,93,4,0.3);
+      transform: translateY(-4px);
+    }
+
+    .feature-card:hover::before { transform: scaleX(1); }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(232,93,4,0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--orange);
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: .5rem;
+    }
+
+    .feature-desc {
+      font-size: .85rem;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    /* ── NUMBERS ── */
+    #numeros {
+      background: var(--orange);
+      padding: 4rem 2rem;
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .number-item {
+      color: white;
+    }
+
+    .number-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      display: block;
+      line-height: 1;
+    }
+
+    .number-label {
+      font-size: .85rem;
+      font-weight: 600;
+      opacity: .85;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: .4rem;
+      display: block;
+    }
+
+    /* ── PROCESS ── */
+    #processo {
+      background: var(--gray-light);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), rgba(232,93,4,0.2));
+      z-index: 0;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border: 3px solid var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--orange);
+      margin: 0 auto 1.2rem;
+      transition: all .3s;
+      box-shadow: 0 0 0 6px var(--gray-light);
+    }
+
+    .process-step:hover .step-number {
+      background: var(--orange);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--dark);
+      margin-bottom: .4rem;
+    }
+
+    .step-desc {
+      font-size: .82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #depoimentos {
+      background: white;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--gray-light);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      transition: transform .3s;
+    }
+
+    .testimonial-card:hover { transform: translateY(-4px); }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 5rem;
+      color: rgba(232,93,4,0.1);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: #F4A800;
+      margin-bottom: .8rem;
+      font-size: .9rem;
+    }
+
+    .testimonial-text {
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .author-info strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--dark);
+    }
+
+    .author-info span {
+      font-size: .78rem;
+      color: var(--text-light);
+    }
+
+    /* ── CONTACT ── */
+    #contato {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contato::before {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(232,93,4,0.12) 0%, transparent 70%);
+    }
+
+    #contato .section-title { color: white; }
+    #contato .section-desc { color: #aaa; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-info-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      text-decoration: none;
+      transition: all .3s;
+    }
+
+    .contact-info-card:hover {
+      background: rgba(232,93,4,0.15);
+      border-color: rgba(232,93,4,0.3);
+      transform: translateX(4px);
+    }
+
+    .contact-info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .82rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: .2rem;
+    }
+
+    .contact-info-text span {
+      font-size: .95rem;
+      color: white;
+      font-weight: 500;
+    }
+
+    .contact-form-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 600;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: .4rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: .8rem 1rem;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .3s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #666; }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+    }
+
+    .form-group select option { background: var(--dark); color: white; }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .5px;
+      cursor: pointer;
+      transition: all .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(232,93,4,0.4);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+    }
+
+    .whatsapp-btn {
+      width: 64px;
+      height: 64px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: white;
+      box-shadow: 0 6px 25px rgba(37,211,102,0.5);
+      transition: all .3s;
+      animation: pulse-green 2s ease-in-out infinite;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 10px 35px rgba(37,211,102,0.6);
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 75px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      color: var(--dark);
+      padding: .5rem 1rem;
+      border-radius: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+
+    .whatsapp-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: white;
+      border-right: none;
+    }
+
+    .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 6px 25px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 6px 40px rgba(37,211,102,0.8), 0 0 0 10px rgba(37,211,102,0.1); }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d0d1a;
+      padding: 3rem 2rem 1.5rem;
+      color: #888;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-brand p {
+      font-size: .85rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: .8rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      text-decoration: none;
+      transition: all .3s;
+      font-size: .9rem;
+    }
+
+    .footer-social a:hover {
+      background: var(--orange);
+      color: white;
+    }
+
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li {
+      margin-bottom: .6rem;
+    }
+
+    .footer-col ul li a {
+      color: #888;
+      text-decoration: none;
+      font-size: .85rem;
+      transition: color .3s;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .footer-col ul li a:hover { color: var(--orange-light); }
+    .footer-col ul li a i { font-size: .6rem; color: var(--orange); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .8rem;
+    }
+
+    .footer-bottom a { color: var(--orange); text-decoration: none; }
+
+    /* ── MOBILE NAV ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0; right: 0;
+      background: rgba(26,26,46,0.98);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 2rem;
+      z-index: 999;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      color: #ccc;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      padding: .6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color .3s;
+    }
+
+    .mobile-menu a:hover { color: var(--orange-light); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-up:nth-child(1) { transition-delay: 0ms; }
+    .fade-up:nth-child(2) { transition-delay: 100ms; }
+    .fade-up:nth-child(3) { transition-delay: 200ms; }
+    .fade-up:nth-child(4) { transition-delay: 300ms; }
+    .fade-up:nth-child(5) { transition-delay: 400ms; }
+    .fade-up:nth-child(6) { transition-delay: 500ms; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+      .hero-subtitle { margin: 0 auto 2rem; }
+      .hero-services-pills { justify-content: center; }
+      .hero-buttons { justify-content: center; }
+      .hero-logo-container { width: 280px; height: 280px; }
+      .hero-logo-img { width: 220px; height: 220px; }
+      .hero-stats { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { display: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .process-steps::before { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-logo-container { width: 220px; height: 220px; }
+      .hero-logo-img { width: 170px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon"><i class="fas fa-building"></i></div>
+    <div class="nav-logo-text">
+      <span>Construtora</span>
+      <span><em>T</em>ORRES</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#diferenciais">Diferenciais</a></li>
+    <li><a href="#processo">Como Funciona</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#contato" class="nav-cta"><i class="fas fa-paper-plane"></i> Orçamento</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+  <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+  <a href="#diferenciais" onclick="toggleMenu()">Diferenciais</a>
+  <a href="#processo" onclick="toggleMenu()">Como Funciona</a>
+  <a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a>
+  <a href="#contato" onclick="toggleMenu()">Orçamento Grátis</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <i class="fas fa-shield-halved"></i>
+        Qualidade & Responsabilidade
+      </div>
+      <h1 class="hero-title">
+        Construindo seus
+        <span class="highlight">Sonhos com</span>
+        Excelência
+      </h1>
+      <p class="hero-subtitle">
+        A Construtora Torres oferece soluções completas para sua obra com profissionais altamente qualificados, materiais de qualidade e o compromisso que você merece.
+      </p>
+      <div class="hero-services-pills">
+        <span class="pill"><i class="fas fa-hard-hat"></i> Construtora</span>
+        <span class="pill"><i class="fas fa-bricks"></i> Pedreiro</span>
+        <span class="pill"><i class="fas fa-faucet"></i> Encanador</span>
+        <span class="pill"><i class="fas fa-grip-lines"></i> Azulejista</span>
+        <span class="pill"><i class="fas fa-bolt"></i> Eletricista</span>
+        <span class="pill"><i class="fas fa-paint-roller"></i> Pintor</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="#contato" class="btn-primary">
+          <i class="fab fa-whatsapp"></i>
+          Solicitar Orçamento
+        </a>
+        <a href="#servicos" class="btn-secondary">
+          <i class="fas fa-th-large"></i>
+          Nossos Serviços
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Obras Realizadas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Anos de Experiência</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Clientes Satisfeitos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-logo-container">
+        <div class="hero-logo-ring"></div>
+        <div class="hero-logo-ring-2"></div>
+        <div class="hero-logo-bg">
+          <svg class="hero-logo-img" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="250" cy="250" r="240" fill="none"/>
+            <rect x="180" y="80" width="50" height="160" rx="4" fill="#2D2D3D"/>
+            <rect x="238" y="50" width="60" height="190" rx="4" fill="#1A1A2E"/>
+            <rect x="306" y="100" width="45" height="140" rx="4" fill="#2D2D3D"/>
+            <rect x="248" y="65" width="12" height="15" rx="2" fill="#4a4a6a"/>
+            <rect x="268" y="65" width="12" height="15" rx="2" fill="#4a4a6a"/>
+            <rect x="248" y="90" width="12" height="15" rx="2" fill="#5a5a7a"/>
+            <rect x="268" y="90" width="12" height="15" rx="2" fill="#5a5a7a"/>
+            <rect x="248" y="115" width="12" height="15" rx="2" fill="#4a4a6a"/>
+            <rect x="268" y="115" width="12" height="15" rx="2" fill="#4a4a6a"/>
+            <polygon points="140,240 250,165 360,240" fill="#E85D04"/>
+            <rect x="155" y="240" width="190" height="90" rx="2" fill="#2D2D3D"/>
+            <rect x="210" y="258" width="30" height="30" rx="2" fill="#4a4a6a"/>
+            <rect x="258" y="258" width="30" height="30" rx="2" fill="#4a4a6a"/>
+            <rect x="204" y="300" width="42" height="30" rx="2" fill="#3a3a5a"/>
+            <g transform="translate(300,200) rotate(-35)">
+              <rect x="0" y="0" width="10" height="55" rx="4" fill="#8B6914"/>
+              <rect x="-2" y="52" width="14" height="4" rx="2" fill="#777"/>
+              <polygon points="-8,56 22,56 18,90 -4,90" fill="#AAAAAA"/>
+              <polygon points="5,90 13,90 9,105" fill="#999"/>
+            </g>
+            <text x="250" y="420" text-anchor="middle" font-family="Montserrat, Arial Black, sans-serif" font-weight="900" font-size="62" fill="#1A1A2E" letter-spacing="2">TORRES</text>
+            <text x="250" y="420" text-anchor="middle" font-family="Montserrat, Arial Black, sans-serif" font-weight="900" font-size="62" fill="none" stroke="#E85D04" stroke-width="1.5" letter-spacing="2">TORRES</text>
+            <text x="250" y="395" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="600" font-size="18" fill="#777" letter-spacing="6">CONSTRUTORA</text>
+            <line x1="100" y1="400" x2="400" y2="400" stroke="#E85D04" stroke-width="2"/>
+            <text x="90" y="465" text-anchor="middle" font-size="11" fill="#888" font-family="Arial">PEDREIRO</text>
+            <text x="175" y="465" text-anchor="middle" font-size="11" fill="#888" font-family="Arial">ENCANADOR</text>
+            <text x="254" y="465" text-anchor="middle" font-size="11" fill="#888" font-family="Arial">AZULEJISTA</text>
+            <text x="334" y="465" text-anchor="middle" font-size="11" fill="#888" font-family="Arial">ELETRICISTA</text>
+            <text x="412" y="465" text-anchor="middle" font-size="11" fill="#888" font-family="Arial">PINTOR</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Saiba mais</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">O Que Fazemos</div>
+      <h2 class="section-title">Nossos <span>Serviços</span></h2>
+      <p class="section-desc">Soluções completas para construção, reforma e manutenção com profissionais experientes e materiais de primeira qualidade.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card card-construcao fade-up">
+        <div class="service-card-accent"></div>
+        <div class="service-card-header">
+          <div class="service-icon-wrap"><i class="fas fa-building"></i></div>
+          <h3 class="service-card-title">Construtora</h3>
+          <p class="service-card-desc">Construção completa do zero, desde a fundação até a entrega das chaves, com acompanhamento técnico em cada etapa.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-list">
+            <li><i class="fas fa-circle"></i>Construção residencial e comercial</li>
+            <li><i class="fas fa-circle"></i>Reformas completas e parciais</li>
+            <li><i class="fas fa-circle"></i>Ampliações e extensões</li>
+            <li><i class="fas fa-circle"></i>Alvenaria estrutural</li>
+            <li><i class="fas fa-circle"></i>Gestão de obra completa</li>
+            <li><i class="fas fa-circle"></i>Laudos e projetos executivos</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="#contato" class="service-link">Solicitar Orçamento <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card card-pedreiro fade-up">
+        <div class="service-card-accent"></div>
+        <div class="service-card-header">
+          <div class="service-icon-wrap"><i class="fas fa-bricks"></i></div>
+          <h3 class="service-card-title">Pedreiro</h3>
+          <p class="service-card-desc">Serviços de alvenaria com precisão e qualidade, utilizando técnicas modernas e materiais selecionados para maior durabilidade.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-list">
+            <li><i class="fas fa-circle"></i>Levantamento de paredes e muros</li>
+            <li><i class="fas fa-circle"></i>Reboco, chapisco e emboço</li>
+            <li><i class="fas fa-circle"></i>Contra-piso e nivelamento</li>
+            <li><i class="fas fa-circle"></i>Estrutura em concreto armado</li>
+            <li><i class="fas fa-circle"></i>Calçadas e passeios</li>
+            <li><i class="fas fa-circle"></i>Demolição e remoção de entulho</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="#contato" class="service-link">Solicitar Orçamento <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card card-encanador fade-up">
+        <div class="service-card-accent"></div>
+        <div class="service-card-header">
+          <div class="service-icon-wrap"><i class="fas fa-faucet-drip"></i></div>
+          <h3 class="service-card-title">Encanador</h3>
+          <p class="service-card-desc">Instalação e manutenção de sistemas hidráulicos residenciais e comerciais com garantia de trabalho e materiais certificados.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-list">
+            <li><i class="fas fa-circle"></i>Instalação hidráulica completa</li>
+            <li><i class="fas fa-circle"></i>Conserto de vazamentos</li>
+            <li><i class="fas fa-circle"></i>Desentupimento de tubulações</li>
+            <li><i class="fas fa-circle"></i>Instalação de caixa d'água</li>
+            <li><i class="fas fa-circle"></i>Aquecedores e boilers</li>
+            <li><i class="fas fa-circle"></i>Esgoto e drenagem</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="#contato" class="service-link">Solicitar Orçamento <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card card-azulejista fade-up">
+        <div class="service-card-accent"></div>
+        <div class="service-card-header">
+          <div class="service-icon-wrap"><i class="fas fa-border-all"></i></div>
+          <h3 class="service-card-title">Azulejista</h3>
+          <p class="service-card-desc">Assentamento de azulejos, pisos e revestimentos com perfeição nos alinhamentos e rejuntamento profissional impecável.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-list">
+            <li><i class="fas fa-circle"></i>Assentamento de porcelanato</li>
+            <li><i class="fas fa-circle"></i>Azulejos para banheiro e cozinha</li>
+            <li><i class="fas fa-circle"></i>Piso frio e cerâmica</li>
+            <li><i class="fas fa-circle"></i>Pedra natural e mármore</li>
+            <li><i class="fas fa-circle"></i>Rejuntamento e impermeabilização</li>
+            <li><i class="fas fa-circle"></i>Substituição e reparos de peças</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="#contato" class="service-link">Solicitar Orçamento <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card card-eletricista fade-up">
+        <div class="service-card-accent"></div>
+        <div class="service-card-header">
+          <div class="service-icon-wrap"><i class="fas fa-bolt"></i></div>
+          <h3 class="service-card-title">Eletricista</h3>
+          <p class="service-card-desc">Instalações elétricas seguras e eficientes, seguindo todas as normas da ABNT NBR 5410 para sua tranquilidade e segurança.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-list">
+            <li><i class="fas fa-circle"></i>Instalação elétrica completa</li>
+            <li><i class="fas fa-circle"></i>Quadro de distribuição (QGBT)</li>
+            <li><i class="fas fa-circle"></i>Tomadas, interruptores e luminárias</li>
+            <li><i class="fas fa-circle"></i>Rede lógica e cabeamento</li>
+            <li><i class="fas fa-circle"></i>Sistema de CFTV e alarmes</li>
+            <li><i class="fas fa-circle"></i>Laudo de conformidade NR10</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="#contato" class="service-link">Solicitar Orçamento <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card card-pintor fade-up">
+        <div class="service-card-accent"></div>
+        <div class="service-card-header">
+          <div class="service-icon-wrap"><i class="fas fa-paint-roller"></i></div>
+          <h3 class="service-card-title">Pintor</h3>
+          <p class="service-card-desc">Pintura interna e externa com acabamento perfeito, utilizando tintas de alta qualidade para um resultado duradouro e bonito.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="service-list">
+            <li><i class="fas fa-circle"></i>Pintura interna e externa</li>
+            <li><i class="fas fa-circle"></i>Textura e grafiato</li>
+            <li><i class="fas fa-circle"></i>Impermeabilização de fachadas</li>
+            <li><i class="fas fa-circle"></i>Pintura epóxi para garagens</li>
+            <li><i class="fas fa-circle"></i>Verniz e esmalte em madeiras</li>
+            <li><i class="fas fa-circle"></i>Reparo de trincas e fissuras</li>
+          </ul>
+        </div>
+        <div class="service-card-footer">
+          <a href="#contato" class="service-link">Solicitar Orçamento <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div style="position:relative; border-radius:20px; overflow:hidden; height:420px; background: linear-gradient(135deg, #1A1A2E, #2D2D3D); display:flex; align-items:center; justify-content:center;">
+          <div style="text-align:center; padding:2rem;">
+            <div style="font-size:5rem; margin-bottom:1rem;">🏗️</div>
+            <p style="color:#aaa; font-size:1rem;">Construindo com qualidade e dedicação há mais de 10 anos</p>
+          </div>
+        </div>
+        <div class="about-card-float">
+          <strong>+500</strong>
+          <span>Obras Concluídas</span>
+        </div>
+        <div class="about-badge-top">
+          <i class="fas fa-award"></i>
+          <span>Empresa Certificada</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-header">
+          <div class="section-tag">Quem Somos</div>
+          <h2 class="section-title">Construindo <span>Sonhos</span> há mais de uma década</h2>
+        </div>
+        <p>A <strong>Construtora Torres</strong> nasceu da paixão pela construção civil e do compromisso com a excelência. Com mais de 10 anos no mercado, nos tornamos referência em serviços de construção, reforma e manutenção na região.</p>
+        <p>Nossa equipe é formada por profissionais altamente qualificados em cada especialidade: pedreiros, encanadores, azulejistas, eletricistas e pintores — todos experientes e dedicados a entregar o melhor resultado para você.</p>
+        <p>Trabalhamos com transparência, cumprimos prazos e utilizamos apenas materiais de primeira qualidade, garantindo durabilidade e satisfação em cada projeto realizado.</p>
+
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+            <div class="value-text">
+              <strong>Confiança</strong>
+              <span>Transparência em cada etapa do projeto</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-clock"></i></div>
+            <div class="value-text">
+              <strong>Pontualidade</strong>
+              <span>Cumprimento rigoroso dos prazos</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-star"></i></div>
+            <div class="value-text">
+              <strong>Qualidade</strong>
+              <span>Materiais premium e acabamento perfeito</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="value-text">
+              <strong>Garantia</strong>
+              <span>Serviços com garantia por escrito</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="diferenciais">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Por Que Nos Escolher</div>
+      <h2 class="section-title">Nossos <span>Diferenciais</span></h2>
+      <p class="section-desc">O que nos torna a melhor escolha para a sua obra ou reforma.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+        <h3 class="feature-title">Profissionais Qualificados</h3>
+        <p class="feature-desc">Toda a nossa equipe passa por rigorosa seleção e treinamento contínuo. Profissionais experientes e certificados em suas especialidades.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3 class="feature-title">Orçamento Gratuito e Detalhado</h3>
+        <p class="feature-desc">Realizamos visita técnica gratuita e apresentamos orçamento completo e transparente, sem surpresas durante a execução.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><i class="fas fa-medal"></i></div>
+        <h3 class="feature-title">Materiais de Qualidade</h3>
+        <p class="feature-desc">Utilizamos apenas materiais de marcas reconhecidas no mercado, garantindo durabilidade e melhor custo-benefício para seu investimento.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+        <h3 class="feature-title">Prazo Garantido</h3>
+        <p class="feature-desc">Compromisso real com os prazos acordados. Planejamento detalhado e gestão eficiente para entregar no tempo combinado.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3 class="feature-title">Atendimento Personalizado</h3>
+        <p class="feature-desc">Acompanhamento próximo em todas as fases da obra. Comunicação direta e eficiente com o responsável técnico do seu projeto.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+        <h3 class="feature-title">Garantia nos Serviços</h3>
+        <p class="feature-desc">Todos os nossos serviços possuem garantia por escrito. Sua satisfação é nossa responsabilidade e prioridade absoluta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numeros">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="number-item fade-up">
+        <span class="number-value" data-target="500">0</span>
+        <span class="number-label">Obras Realizadas</span>
+      </div>
+      <div class="number-item fade-up">
+        <span class="number-value" data-target="10">0</span>
+        <span class="number-label">Anos de Experiência</span>
+      </div>
+      <div class="number-item fade-up">
+        <span class="number-value" data-target="98">0</span>
+        <span class="number-label">% Clientes Satisfeitos</span>
+      </div>
+      <div class="number-item fade-up">
+        <span class="number-value" data-target="6">0</span>
+        <span class="number-label">Especialidades</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="processo">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Como Trabalhamos</div>
+      <h2 class="section-title">Processo <span>Simples e Transparente</span></h2>
+      <p class="section-desc">Da visita técnica à entrega final, cada etapa é cuidadosamente planejada para garantir o melhor resultado.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Contato & Visita</h3>
+        <p class="step-desc">Entre em contato e agendamos uma visita técnica gratuita para avaliar seu projeto.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Orçamento</h3>
+        <p class="step-desc">Apresentamos orçamento detalhado com materiais, mão de obra e prazo de conclusão.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Planejamento</h3>
+        <p class="step-desc">Planejamos cada etapa da execução para garantir eficiência e qualidade total.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-number">04</div>
+        <h3 class="step-title">Execução</h3>
+        <p class="step-desc">Nossa equipe especializada executa o serviço com rigoroso controle de qualidade.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-number">05</div>
+        <h3 class="step-title">Entrega & Garantia</h3>
+        <p class="step-desc">Entregamos a obra concluída com laudo de garantia e total suporte pós-obra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Depoimentos</div>
+      <h2 class="section-title">O Que Dizem Nossos <span>Clientes</span></h2>
+      <p class="section-desc">A satisfação dos nossos clientes é o nosso maior orgulho e motivação para sempre melhorar.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Contratei a Construtora Torres para uma reforma completa da minha casa e fiquei impressionado com a qualidade e a pontualidade. Cada detalhe foi executado com perfeição. Super recomendo!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #E85D04, #C04D00);">JC</div>
+          <div class="author-info">
+            <strong>João Carlos Silva</strong>
+            <span>Reforma Residencial Completa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"O serviço de azulejista foi incrível! Os acabamentos do meu banheiro e cozinha ficaram impecáveis. O profissional foi muito cuidadoso e caprichoso. Amei o resultado!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #1656BE, #0077B6);">MA</div>
+          <div class="author-info">
+            <strong>Maria Aparecida Santos</strong>
+            <span>Assentamento de Porcelanato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Tive um problema elétrico urgente e a Torres resolveu no mesmo dia. O eletricista foi muito competente e explicou tudo o que fez. Preço justo e serviço de excelência!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #F4A800, #E85D04);">RP</div>
+          <div class="author-info">
+            <strong>Roberto Pereira Lima</strong>
+            <span>Instalação Elétrica</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Contratei o serviço de pintura e texturização da fachada da minha casa. Resultado surpreendente! A casa ficou totalmente renovada. Profissionais sérios e comprometidos."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">AS</div>
+          <div class="author-info">
+            <strong>Ana Souza Ferreira</strong>
+            <span>Pintura e Textura de Fachada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"A Torres construiu meu imóvel comercial do zero. Acompanhamento impecável, prazos cumpridos e a qualidade superou minhas expectativas. Já indiquei para vários amigos!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #8B4513, #6B3410);">MR</div>
+          <div class="author-info">
+            <strong>Marcos Rodrigues</strong>
+            <span>Construção Comercial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Estava com infiltração há muito tempo e ninguém resolvia. A Torres resolveu o problema definitivamente! O encanador foi muito profissional e deixou tudo limpo após o serviço."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #0077B6, #023E8A);">CF</div>
+          <div class="author-info">
+            <strong>Carla Fernanda Costa</strong>
+            <span>Conserto de Vazamento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contato">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Fale Conosco</div>
+      <h2 class="section-title">Solicite seu <span>Orçamento Gratuito</span></h2>
+      <p class="section-desc">Preencha o formulário ou entre em contato diretamente pelo WhatsApp. Respondemos em até 1 hora!</p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-cards">
+          <a href="https://wa.me/5500000000000" class="contact-info-card" target="_blank">
+            <div class="contact-info-icon" style="background: rgba(37,211,102,0.15); color: #25D366;">
+              <i class="fab fa-whatsapp fa-lg"></i>
+            </div>
+            <div class="contact-info-text">
+              <strong>WhatsApp</strong>
+              <span>(00) 00000-0000</span>
+            </div>
+          </a>
+          <a href="tel:+5500000000000" class="contact-info-card">
+            <div class="contact-info-icon" style="background: rgba(232,93,4,0.15); color: var(--orange);">
+              <i class="fas fa-phone fa-lg"></i>
+            </div>
+            <div class="contact-info-text">
+              <strong>Telefone</strong>
+              <span>(00) 00000-0000</span>
+            </div>
+          </a>
+          <a href="mailto:contato@construtoratorres.com.br" class="contact-info-card">
+            <div class="contact-info-icon" style="background: rgba(255,255,255,0.06); color: #aaa;">
+              <i class="fas fa-envelope fa-lg"></i>
+            </div>
+            <div class="contact-info-text">
+              <strong>E-mail</strong>
+              <span>contato@construtoratorres.com.br</span>
+            </div>
+          </a>
+          <div class="contact-info-card" style="cursor: default;">
+            <div class="contact-info-icon" style="background: rgba(255,255,255,0.06); color: #aaa;">
+              <i class="fas fa-map-marker-alt fa-lg"></i>
+            </div>
+            <div class="contact-info-text">
+              <strong>Localização</strong>
+              <span>Atendemos toda a região</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(232,93,4,0.1); border: 1px solid rgba(232,93,4,0.2); border-radius: 12px;">
+          <h4 style="color: var(--orange); font-family: 'Montserrat', sans-serif; margin-bottom: .5rem; font-size: .9rem;">
+            <i class="fas fa-clock"></i> Horário de Atendimento
+          </h4>
+          <p style="color: #aaa; font-size: .85rem; line-height: 1.8;">
+            Segunda a Sexta: 07h às 18h<br>
+            Sábado: 07h às 13h<br>
+            <span style="color: var(--orange-light);">WhatsApp disponível 24h para urgências</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h3 style="font-family:'Montserrat',sans-serif; color:white; font-size:1.1rem; margin-bottom:1.5rem; font-weight:700;">
+          <i class="fas fa-paper-plane" style="color:var(--orange);"></i> Enviar Mensagem
+        </h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome Completo</label>
+              <input type="text" placeholder="Seu nome" required />
+            </div>
+            <div class="form-group">
+              <label>WhatsApp</label>
+              <input type="tel" placeholder="(00) 00000-0000" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Serviço de Interesse</label>
+            <select required>
+              <option value="" disabled selected>Selecione o serviço</option>
+              <option>Construtora – Obra Completa</option>
+              <option>Pedreiro – Alvenaria</option>
+              <option>Encanador – Hidráulica</option>
+              <option>Azulejista – Revestimentos</option>
+              <option>Eletricista – Elétrica</option>
+              <option>Pintor – Pintura</option>
+              <option>Múltiplos Serviços</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Descreva seu Projeto</label>
+            <textarea placeholder="Conte-nos mais sobre o que você precisa..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div style="display:flex; align-items:center; gap:.6rem; margin-bottom:.5rem;">
+        <div style="width:36px; height:36px; background:var(--orange); border-radius:8px; display:flex; align-items:center; justify-content:center; color:white;">
+          <i class="fas fa-building"></i>
+        </div>
+        <div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:.6rem; color:#666; letter-spacing:2px; text-transform:uppercase;">Construtora</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:900; color:white; letter-spacing:1px;"><span style="color:var(--orange);">T</span>ORRES</div>
+        </div>
+      </div>
+      <p>Construindo com qualidade, responsabilidade e compromisso. Sua obra em boas mãos com a equipe Torres.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#servicos"><i class="fas fa-chevron-right"></i>Construtora</a></li>
+        <li><a href="#servicos"><i class="fas fa-chevron-right"></i>Pedreiro</a></li>
+        <li><a href="#servicos"><i class="fas fa-chevron-right"></i>Encanador</a></li>
+        <li><a href="#servicos"><i class="fas fa-chevron-right"></i>Azulejista</a></li>
+        <li><a href="#servicos"><i class="fas fa-chevron-right"></i>Eletricista</a></li>
+        <li><a href="#servicos"><i class="fas fa-chevron-right"></i>Pintor</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="#sobre"><i class="fas fa-chevron-right"></i>Sobre Nós</a></li>
+        <li><a href="#diferenciais"><i class="fas fa-chevron-right"></i>Diferenciais</a></li>
+        <li><a href="#processo"><i class="fas fa-chevron-right"></i>Como Funciona</a></li>
+        <li><a href="#depoimentos"><i class="fas fa-chevron-right"></i>Depoimentos</a></li>
+        <li><a href="#contato"><i class="fas fa-chevron-right"></i>Contato</a></li>
+        <li><a href="#contato"><i class="fas fa-chevron-right"></i>Orçamento</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="#"><i class="fab fa-whatsapp" style="color:#25D366; font-size:.9rem;"></i>(00) 00000-0000</a></li>
+        <li><a href="#"><i class="fas fa-phone" style="color:var(--orange);"></i>(00) 00000-0000</a></li>
+        <li><a href="#"><i class="fas fa-envelope" style="color:var(--orange);"></i>contato@torres.com</a></li>
+        <li><a href="#"><i class="fas fa-clock" style="color:var(--orange);"></i>Seg–Sex 7h às 18h</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2024 Construtora Torres. Todos os direitos reservados.</span>
+    <span>Desenvolvido com <span style="color:var(--orange);">♥</span> — CNPJ: 00.000.000/0001-00</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="whatsapp-float">
+  <div class="whatsapp-tooltip">Fale conosco agora!</div>
+  <a href="https://wa.me/5500000000000" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function animateCounters() {
+    document.querySelectorAll('[data-target]').forEach(el => {
+      const target = parseInt(el.dataset.target);
+      let current = 0;
+      const step = target / 60;
+      const interval = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current) + (target === 98 ? '%' : target >= 100 ? '+' : '');
+        if (current >= target) clearInterval(interval);
+      }, 25);
+    });
+  }
+
+  const numbersObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounters();
+        numbersObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const numbersSection = document.getElementById('numeros');
+  if (numbersSection) numbersObserver.observe(numbersSection);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-submit');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
+    btn.style.background = '#25D366';
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--orange-light)' : '';
+    });
+  });
+</script>
+</body>
+</html>

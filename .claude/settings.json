@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx --yes vite --port 5175 \"c:/Users/leo/Desktop/Projetos Sites/Construtora Torres – Pedreiro  Encanador  Azulejista  Eletricista  Pintor\")"
+    ]
+  }
+}
